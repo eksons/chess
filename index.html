@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>对弈 · 国际象棋</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">对<em>弈</em></div>
+    <div class="tagline">国际象棋 · CHESS</div>
+  </header>
+
+  <main class="stage">
+    <section class="board-wrap">
+      <div class="board" id="board">
+        <div id="pieces"></div>
+
+        <div id="promo">
+          <div class="promo-box">
+            <button class="promo-opt" data-promo="q"></button>
+            <button class="promo-opt" data-promo="r"></button>
+            <button class="promo-opt" data-promo="b"></button>
+            <button class="promo-opt" data-promo="n"></button>
+          </div>
+        </div>
+
+        <div id="overlay">
+          <div class="ov-title"></div>
+          <div class="ov-sub"></div>
+          <button id="btn-again">再来一局</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="rail">
+      <section>
+        <div class="status">
+          <span class="turn-dot w" id="turn-dot"></span>
+          <span id="status-text">白方行棋</span>
+        </div>
+      </section>
+
+      <section>
+        <div class="label">控制</div>
+        <div class="btn-row">
+          <button id="btn-new">新对局</button>
+          <button id="btn-undo">悔棋</button>
+          <button id="btn-flip">翻转棋盘</button>
+        </div>
+        <div class="label">模式</div>
+        <div class="seg" id="seg-mode">
+          <button data-mode="pvp" class="on">双人对弈</button>
+          <button data-mode="ai">人机对弈</button>
+          <button data-mode="bot">双机器人</button>
+        </div>
+        <div id="level-row" class="off">
+          <div class="label">AI 难度</div>
+          <div class="seg" id="seg-level">
+            <button data-level="1">初级</button>
+            <button data-level="2" class="on">中级</button>
+            <button data-level="3">高级</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="label">被吃子</div>
+        <div class="cap-row">
+          <span class="cap-side">白方</span>
+          <div class="cap-pool" id="cap-w"></div>
+        </div>
+        <div class="cap-row">
+          <span class="cap-side">黑方</span>
+          <div class="cap-pool" id="cap-b"></div>
+          <span id="adv"></span>
+        </div>
+      </section>
+
+      <section>
+        <div class="label">着法记录</div>
+        <div class="moves" id="moves-body"></div>
+      </section>
+    </aside>
+  </main>
+
+  <script src="chess.js"></script>
+</body>
+</html>
